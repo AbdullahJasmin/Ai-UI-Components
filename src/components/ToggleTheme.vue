@@ -23,7 +23,7 @@ const toggleTheme = () => {
 </script>
 <template>
     <button @click="toggleTheme"
-        class="group px-4 py-2 border rounded-lg  flex items-center overflow-hidden border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300">
+        class="group px-4 py-2 border rounded-lg  flex items-center overflow-hidden transition-all duration-300 border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100">
         <Icon icon="lucide:moon" :height="24" class=" text-gray-500 dark:hidden group-hover:text-gray-400" />
         <Icon icon="lucide:sun" :height="24" class="hidden dark:block text-gray-400 group-hover:text-gray-500" />
         <span
