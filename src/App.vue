@@ -8,5 +8,6 @@ import ToggleTheme from '@/components/ToggleTheme.vue';
 <template> 
     <ToggleTheme class="fixed right-2 top-2" />
 
-    <RouterView class="bg-white dark:bg-black" /> 
+    <RouterView class="transition-all duration-300 bg-white dark:bg-black " /> 
 </template>
+ 
