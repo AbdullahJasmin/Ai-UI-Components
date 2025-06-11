@@ -163,7 +163,7 @@ const sendMessage = () => {
             </button>
 
             <button v-if="!typing" class="
-                    group/button ml-auto  px-3 py-2 rounded-md flex gap-2 cursor-pointer text-sm items-center justify-center transition-all duration-300 border 
+                    group/button ml-auto h-10 px-3 py-2 rounded-md flex gap-2 cursor-pointer text-sm items-center justify-center transition-all duration-300 border 
                      border-indigo-600 dark:border-indigo-300 text-indigo-600 dark:text-indigo-300 hover:text-gray-300 dark:hover:text-gray-700  hover:bg-indigo-500 dark:hover:bg-indigo-300 
                      ">
                 <Icon icon="lucide:audio-waveform" :height="24" :width="24" />
@@ -171,7 +171,7 @@ const sendMessage = () => {
             </button>
 
             <button v-if="typing" @click="sendMessage" class="
-                    group/button ml-auto  px-3 py-2 rounded-md flex gap-2 cursor-pointer text-sm items-center justify-center transition-all duration-300 
+                    group/button ml-auto h-10 px-3 py-2 rounded-md flex gap-2 cursor-pointer text-sm items-center justify-center transition-all duration-300 
                      text-gray-300 dark:text-gray-700  hover:text-gray-200 dark:hover:text-gray-800  bg-indigo-500 dark:bg-indigo-300  hover:bg-indigo-600 dark:hover:bg-indigo-200
                      ">
                 <Icon icon="lucide:send" :height="24" :width="24" />
