@@ -70,25 +70,25 @@ const sendMessage = () => {
 <template>
     <form v-if="layout == 'single'" @submit.prevent="sendMessage" class="
         group max-w-2xl w-full m-2 p-2 border rounded-lg  flex items-center gap-2 transition-all duration-300 
-        border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 
-        hover:bg-gray-100 dark:hover:border-indigo-300 hover:border-indigo-500 dark:hover:bg-gray-800 
-        focus-within:bg-gray-100 focus-within:border-indigo-600 dark:focus-within:bg-gray-800   dark:focus-within:border-indigo-300
+        border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 
+        hover:bg-neutral-100 dark:hover:border-indigo-300 hover:border-indigo-500 dark:hover:bg-neutral-800 
+        focus-within:bg-neutral-100 focus-within:border-indigo-600 dark:focus-within:bg-neutral-800   dark:focus-within:border-indigo-300
     ">
         <span class="
                 p-2 transition-all duration-300 
-                text-gray-500 dark:text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 
+                text-neutral-500 dark:text-neutral-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 
                 group-focus-within:text-indigo-600 dark:group-focus-within:text-indigo-300
             ">
             <Icon icon="lucide:wand-sparkles" :height="24" :width="24" />
         </span>
         <input type="text" placeholder="How can I help you?" @input="hasTyped" class="
-                text-xl w-full focus:outline-none placeholder:text-gray-500 placeholder:dark:text-gray-400 dark:text-gray-50
+                text-xl w-full focus:outline-none placeholder:text-neutral-500 placeholder:dark:text-neutral-400 dark:text-neutral-50
             " v-model.trim="textInput" />
         <button @click="handleFileInput" type="button" class="
                 p-2 rounded-md cursor-pointer transition-all duration-300 flex items-center gap-2  
             " :class="fileCount > 0 ?
-                'text-gray-300 dark:text-gray-700  bg-gray-600 dark:bg-gray-300 hover:bg-gray-700 dark:hover:bg-gray-200' :
-                'text-gray-700 dark:text-gray-300 hover:text-gray-300 dark:hover:text-gray-700  hover:bg-gray-700 dark:hover:bg-gray-300'
+                'text-neutral-300 dark:text-neutral-700  bg-neutral-600 dark:bg-neutral-300 hover:bg-neutral-700 dark:hover:bg-neutral-200' :
+                'text-neutral-700 dark:text-neutral-300 hover:text-neutral-300 dark:hover:text-neutral-700  hover:bg-neutral-700 dark:hover:bg-neutral-300'
                 ">
             <Icon icon="lucide:paperclip" :height="24" :width="24" />
             <span v-if="fileCount > 0">
@@ -98,13 +98,13 @@ const sendMessage = () => {
         <input type="file" class="hidden" @change="handleFileInput" ref="fileInput" multiple />
         <button v-if="!typing" class="
                 p-2 rounded-md cursor-pointer transition-all duration-300 
-                text-indigo-600 dark:text-indigo-300 hover:text-gray-300 dark:hover:text-gray-700 hover:bg-indigo-500 dark:hover:bg-indigo-300 
+                text-indigo-600 dark:text-indigo-300 hover:text-neutral-300 dark:hover:text-neutral-700 hover:bg-indigo-500 dark:hover:bg-indigo-300 
             ">
             <Icon icon="lucide:audio-waveform" :height="24" :width="24" />
         </button>
         <button v-if="typing" @click="sendMessage" class="
                 p-2 rounded-md cursor-pointer transition-all duration-300 
-                text-gray-300 dark:text-gray-700  hover:text-gray-200 dark:hover:text-gray-800 
+                text-neutral-300 dark:text-neutral-700  hover:text-neutral-200 dark:hover:text-neutral-800 
                 bg-indigo-500 dark:bg-indigo-300  hover:bg-indigo-600 dark:hover:bg-indigo-200
             ">
             <Icon icon="lucide:send" :height="24" :width="24" />
@@ -114,30 +114,30 @@ const sendMessage = () => {
 
     <form v-if="layout == 'double'" @submit.prevent="sendMessage" class="
         group max-w-2xl w-full m-2 p-4 border rounded-lg  flex flex-col items-center gap-5 transition-all duration-300 
-        border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 
-        dark:hover:border-indigo-300 hover:border-indigo-500 dark:hover:bg-gray-800 
-        focus-within:bg-gray-100 focus-within:border-indigo-600 dark:focus-within:bg-gray-800   dark:focus-within:border-indigo-300
+        border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 hover:bg-neutral-100 
+        dark:hover:border-indigo-300 hover:border-indigo-500 dark:hover:bg-neutral-800 
+        focus-within:bg-neutral-100 focus-within:border-indigo-600 dark:focus-within:bg-neutral-800   dark:focus-within:border-indigo-300
     ">
         <div class="
             flex w-full items-center gap-3
         ">
             <span class="
                     transition-all duration-300 
-                    text-gray-500 dark:text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 
+                    text-neutral-500 dark:text-neutral-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 
                     group-focus-within:text-indigo-600 dark:group-focus-within:text-indigo-300
                 ">
                 <Icon icon="lucide:wand-sparkles" :height="24" :width="24" />
             </span>
             <input type="text" placeholder="How can I help you?" @input="hasTyped" class="
-                    text-xl w-full focus:outline-none placeholder:text-gray-500 placeholder:dark:text-gray-400 dark:text-gray-50
+                    text-xl w-full focus:outline-none placeholder:text-neutral-500 placeholder:dark:text-neutral-400 dark:text-neutral-50
                 " v-model.trim="textInput" />
         </div>
         <div class="w-full flex gap-2 flex-row justify-start">
             <button @click="handleFileInput" type="button" class="
                 group/button px-3 py-2 rounded-md flex gap-1 cursor-pointer text-sm items-center justify-center transition-all duration-300  
                  " :class="fileCount > 0 ?
-                    'text-gray-300 dark:text-gray-700  bg-gray-600 dark:bg-gray-300 hover:bg-gray-700 dark:hover:bg-gray-200' :
-                    'text-gray-700 dark:text-gray-300 hover:text-gray-300 dark:hover:text-gray-700  hover:bg-gray-700 dark:hover:bg-gray-300 border'
+                    'text-neutral-300 dark:text-neutral-700  bg-neutral-600 dark:bg-neutral-300 hover:bg-neutral-700 dark:hover:bg-neutral-200' :
+                    'text-neutral-700 dark:text-neutral-300 hover:text-neutral-300 dark:hover:text-neutral-700  hover:bg-neutral-700 dark:hover:bg-neutral-300 border'
                     ">
                 <Icon icon="lucide:paperclip" :height="16" :width="16" />
                 <span v-if="fileCount > 0">
@@ -153,18 +153,16 @@ const sendMessage = () => {
 
             <button type="button" @click="toggleWebSearch" class="
                     group/button px-3 py-2 rounded-md flex gap-1 cursor-pointer text-sm items-center justify-center transition-all duration-300 border
-                     "
-                     :class="webSearch ? 
-                     ' text-gray-300 dark:text-gray-700   bg-gray-700 dark:bg-gray-300 hover:text-gray-200 dark:hover:text-gray-800 hover:bg-gray-800 dark:hover:bg-gray-200' : 
-                     '  text-gray-700 dark:text-gray-300  hover:bg-gray-200 dark:hover:bg-gray-600'"
-                     >
+                     " :class="webSearch ?
+                        ' text-neutral-300 dark:text-neutral-700   bg-neutral-700 dark:bg-neutral-300 hover:text-neutral-200 dark:hover:text-neutral-800 hover:bg-neutral-800 dark:hover:bg-neutral-200' :
+                        '  text-neutral-700 dark:text-neutral-300  hover:bg-neutral-200 dark:hover:bg-neutral-600'">
                 <Icon icon="lucide:globe" :height="16" :width="16" />
                 Web
             </button>
 
             <button v-if="!typing" class="
                     group/button ml-auto h-10 px-3 py-2 rounded-md flex gap-2 cursor-pointer text-sm items-center justify-center transition-all duration-300 border 
-                     border-indigo-600 dark:border-indigo-300 text-indigo-600 dark:text-indigo-300 hover:text-gray-300 dark:hover:text-gray-700  hover:bg-indigo-500 dark:hover:bg-indigo-300 
+                     border-indigo-600 dark:border-indigo-300 text-indigo-600 dark:text-indigo-300 hover:text-neutral-300 dark:hover:text-neutral-700  hover:bg-indigo-500 dark:hover:bg-indigo-300 
                      ">
                 <Icon icon="lucide:audio-waveform" :height="24" :width="24" />
                 Voice
@@ -172,7 +170,7 @@ const sendMessage = () => {
 
             <button v-if="typing" @click="sendMessage" class="
                     group/button ml-auto h-10 px-3 py-2 rounded-md flex gap-2 cursor-pointer text-sm items-center justify-center transition-all duration-300 
-                     text-gray-300 dark:text-gray-700  hover:text-gray-200 dark:hover:text-gray-800  bg-indigo-500 dark:bg-indigo-300  hover:bg-indigo-600 dark:hover:bg-indigo-200
+                     text-neutral-300 dark:text-neutral-700  hover:text-neutral-200 dark:hover:text-neutral-800  bg-indigo-500 dark:bg-indigo-300  hover:bg-indigo-600 dark:hover:bg-indigo-200
                      ">
                 <Icon icon="lucide:send" :height="24" :width="24" />
                 Send
